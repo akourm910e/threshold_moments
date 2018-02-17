@@ -31,7 +31,7 @@ Programm summary:
 A benchmarking has been used to compare the methods. It uses the performance.now() method returning a DOMHighResTimeStamp, measured in milliseconds, accurate to five thousandths of a millisecond (5 microseconds). 
 The results are in millisecond and represent the mean of 100 iterations of the method after 100 iteration to warming it up. It compares the method according to the size of an image (1 "lena" to 10 "lenas") and to two web browsers : Firefox (Quantum 57.0.2 64bits) and Chrome (63.0.3239.84 64bits).
 
-### k-means
+### Threshold Moments
 
 <figure>
     <img src="(https://github.com/rmy17/bioinf-struct/blob/master/projectThreshold/images/KmeansImage1.png)" alt="Image" />
@@ -70,63 +70,13 @@ Bilevel thresholding and multilevel thresholding can be done with k-means cluste
     <center><figcaption>Figure 5 : Examples of differents executions</figcaption></center>
 </figure>
 
-### Adaptive threshold
 
-<figure>
-    <img src="(https://github.com/rmy17/bioinf-struct/blob/master/projectThreshold/images/benchImgJuju.png)" alt="Image" />
-    <center><figcaption>Figure 6 : Benchmark of the Adaptive threshold method with Firefox and Chrome.</figcaption></center>
-</figure>
-
-The figure 6 show that the obtained results from benchmarks are very variables, it's very surprising. Indeed, we can observe that the execution times globally increases with the the image size increasing. However, we can also observes that the execution with biggest size images is sometimes faster with small pictures. Another benchmark with increasing size images is proportional did not show any variability in the results. An exponential curve is observed, which has been expected (Figure 7).
-
-<figure>
-    <img src="(https://github.com/rmy17/bioinf-struct/blob/master/projectThreshold/images/benchAdapMe.png)" alt="Image" />
-    <center><figcaption>Figure 7 : Benchmark of the Adaptative threshold method with proportional size images and with Firefox and Chrome</figcaption></center>
-</figure>
-
-A threshold was made with an 8 bits and 16 bits image(Figure 8).
-
-<figure>
-    <img src="(https://github.com/rmy17/bioinf-struct/blob/master/projectThreshold/images/Adaptive.png)" alt="Image" />
-    <center><figcaption>Figure 8 : Examples of the execution of 8bits(left) and 16 bits(rigth) image.</figcaption></center>
-</figure>
-
-### Max Entropy
-
-The figure below show the result given by ImageJ’s function Auto-threshold which uses Max entropy method,and the maxEntropy() function implemented in javascript. We can see that we obtain similar results (Figure 9).
-
-![]()
-
-The results of benchmark for maxEntropy() function show two things. 
-
-<figure>
-    <img src="(https://github.com/rmy17/bioinf-struct/blob/master/projectThreshold/images/BenchAlexis.png)" alt="Image" />
-    <center><figcaption>Figure 9 : Execution time of maxEntropy() function with ten increasing image sizes (uint8 images)</figcaption></center>
-</figure>
-
-### Otsu
-
-The two pictures below show the result given by ImageJ’s[^RUE2017] function Auto-threshold which uses Otsu method,and our otsu() function[^RID1978]. We can see that we obtain quite similar results(Figure 10).
-
-
-<figure>
-    <img src="(https://github.com/rmy17/bioinf-struct/blob/master/projectThreshold/images/blobsmercia.png)" alt="Image" />
-    <center><figcaption>Figure 10: Results of otsu method. on the left: original image, in the middle: output of our function, on the right: output of ImageJ Threshold.</figcaption></center>
-</figure>
-
-The result of our benchmark for our function for images uint8 shows us the expected result: the otsu() function is the fastest. the function takes longer as the image grows. We can also see that the differences between the two browsers are firefox and chrome, as we increase the size of the input image, the algorithm takes three more times the execution time.This result was expected for otsu because its algorithm  operates on histograms (which are integer or float arrays of length 256), it's quite fast unlike adaptive threshold for example(Figure 11).
-
-
-<figure>
-    <img src="(https://github.com/rmy17/bioinf-struct/blob/master/projectThreshold/images/BenchOtsuJuju.png)" alt="Image" />
-    <center><figcaption>Figure 11: Execution time of the function with ten increasing image sizes (uint8 images).</figcaption></center>
-</figure>
 
 ## Discussion
 
 All the functions can handle the processing of pictures up to 2024x2024 pixels and maybe higher, and two types : uint8, uint16.
 
-### K-means
+### Threshold Moments
 
 Two implementations have been designed. The first one, as proposed in the program summary, following a direct description of the k-means clustering, has to read through each pixel of the image multiples times, to label them and to compare new and old label to each other. It is getting slower the bigger the image is.
 
