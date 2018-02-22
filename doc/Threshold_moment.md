@@ -14,19 +14,6 @@ This method has been established by WEN-HSIANG TSAI . Here is proposed two imple
 
 ### Threshold Moments
 
-k-means clustering is a method of vector quantization, it is one of the most popular method for cluster analysis. k-means clustering aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean, serving as a prototype of the cluster. k is set by the observer. 
-
-The method has been adapted to automatic thresholding : each cluster will represent one side of a threshold. Choosing 2 clusters (k=2) will result in a bilevel thresholding. Choosing 3 or more will result in a multilevel thresholding. The mean of each cluster is usually called a "centroid".
-
-Programm summary:
-
-1. Initialization of k-numbers of random centroids.
-2. Create k-numbers of cluster by labeling each pixel of the image with its closest centroid.
-3. Compute the mean of each cluster to create brand new k-numbers of centroids.
-4. Label each pixel with its closest new centroid and confront them to the old labels :
-    If the old and new labels are exactly the same, stop the loop.
-    Else, new labels supersede old labels then repeat steps 3 and 4.
-5. Each pixel take the value of its closest centroid. If k=2, each pixel can become black or white.
 
 
  
