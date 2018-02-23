@@ -6,9 +6,10 @@ Kourmanalieva Antoine
 
 The image thresholding is mainly used in image analysis and is the most simple way for image segmentation.
 It replaces one by one the pixels of an image using a fixed threshold value. Thus, if a pixel with a value greater than the threshold , it will take the value 255 (white), and if its value is lower (for example 100), it will take the value 0 (black).
+It is called bilevel thresholding.
 
 
-This method has been established by WEN-HSIANG TSAI . Here is proposed two implementations of this method in JavaScript, with one using the paradigm of functional programming. The implementation has been done using the Java code of ImageJ of the function moment() in the file AutoThresholder.java. This work has been performed in the context of the time project which stands for Tiny Image Processing in ECMAScript. It can be found on the Github crazybiocomputing. The Material and methods part will describe the moment() function of ImageJ and the Benchmark procedure. The result part will be about the comparison of the proposed implementation with the ImageJ implementation.
+This method has been established by WEN-HSIANG TSAI. Here is proposed two implementations of this method in JavaScript, with one using the paradigm of functional programming. The implementation has been done using the Java code of ImageJ of the function moment() in the file AutoThresholder.java. This work has been performed in the context of the time project which stands for Tiny Image Processing in ECMAScript. It can be found on the Github crazybiocomputing. The Material and methods part will describe the moment() function of ImageJ and the Benchmark procedure. The result part will be about the comparison of the proposed implementation with the ImageJ implementation.
 
 ## Materiel and methods
 
