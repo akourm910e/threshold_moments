@@ -13,8 +13,6 @@ This method has been established by WEN-HSIANG TSAI. Here is proposed two implem
 
 ## Materiel and methods
 
-### Threshold Moments
-
 
 
  
@@ -22,8 +20,6 @@ This method has been established by WEN-HSIANG TSAI. Here is proposed two implem
  
 A benchmarking has been used to compare the methods. It uses the performance.now() method returning a DOMHighResTimeStamp, measured in milliseconds, accurate to five thousandths of a millisecond (5 microseconds). 
 The results are in millisecond and represent the mean of 100 iterations of the method after 100 iteration to warming it up. It compares the method according to the size of an image (1 "lena" to 10 "lenas") and to two web browsers : Firefox (Quantum 57.0.2 64bits) and Chrome (63.0.3239.84 64bits).
-
-### Threshold Moments
 
 <figure>
     <img src="(https://github.com/rmy17/bioinf-struct/blob/master/projectThreshold/images/KmeansImage1.png)" alt="Image" />
@@ -68,7 +64,7 @@ Bilevel thresholding and multilevel thresholding can be done with k-means cluste
 
 All the functions can handle the processing of pictures up to 2024x2024 pixels and maybe higher, and two types : uint8, uint16.
 
-### Threshold Moments
+
 
 Two implementations have been designed. The first one, as proposed in the program summary, following a direct description of the k-means clustering, has to read through each pixel of the image multiples times, to label them and to compare new and old label to each other. It is getting slower the bigger the image is.
 
